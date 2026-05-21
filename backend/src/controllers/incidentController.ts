@@ -1,9 +1,12 @@
 import { Request, Response } from 'express';
-import { IncidentStatus } from '@prisma/client';
 import { IncidentService } from '../services/incidentService';
-import { IncidentFilters } from '../validations/incidentSchemas';
+import { IncidentFilters, IncidentStatus } from '../validations/incidentSchemas';
 
 const incidentService = new IncidentService();
+
+function getIdParam(request: Request) {
+  return String(request.params.id);
+}
 
 export class IncidentController {
   async list(request: Request, response: Response) {
@@ -12,7 +15,7 @@ export class IncidentController {
   }
 
   async show(request: Request, response: Response) {
-    const incident = await incidentService.findById(request.params.id);
+    const incident = await incidentService.findById(getIdParam(request));
     return response.json(incident);
   }
 
@@ -22,20 +25,20 @@ export class IncidentController {
   }
 
   async update(request: Request, response: Response) {
-    const incident = await incidentService.update(request.params.id, request.body);
+    const incident = await incidentService.update(getIdParam(request), request.body);
     return response.json(incident);
   }
 
   async updateStatus(request: Request, response: Response) {
     const incident = await incidentService.updateStatus(
-      request.params.id,
+      getIdParam(request),
       request.body.status as IncidentStatus
     );
     return response.json(incident);
   }
 
   async delete(request: Request, response: Response) {
-    await incidentService.delete(request.params.id);
+    await incidentService.delete(getIdParam(request));
     return response.status(204).send();
   }
 }

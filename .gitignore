@@ -2,9 +2,12 @@ node_modules/
 dist/
 .env
 *.log
+*.tsbuildinfo
 
 backend/prisma/dev.db
 backend/prisma/dev.db-journal
 backend/logs/*.log
 
 frontend/dist/
+frontend/vite.config.js
+frontend/vite.config.d.ts

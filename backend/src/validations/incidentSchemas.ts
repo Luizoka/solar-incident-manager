@@ -39,3 +39,4 @@ export const incidentFiltersSchema = z.object({
 export type CreateIncidentInput = z.infer<typeof createIncidentSchema>;
 export type UpdateIncidentInput = z.infer<typeof updateIncidentSchema>;
 export type IncidentFilters = z.infer<typeof incidentFiltersSchema>;
+export type IncidentStatus = z.infer<typeof statusSchema>;

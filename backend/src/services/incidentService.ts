@@ -1,8 +1,9 @@
-import { IncidentStatus, Prisma } from '@prisma/client';
+import { Prisma } from '@prisma/client';
 import { IncidentRepository } from '../repositories/incidentRepository';
 import {
   CreateIncidentInput,
   IncidentFilters,
+  IncidentStatus,
   UpdateIncidentInput
 } from '../validations/incidentSchemas';
 import { HttpError } from '../utils/httpError';
