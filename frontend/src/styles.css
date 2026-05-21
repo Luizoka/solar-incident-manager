@@ -21,6 +21,10 @@ select {
   font: inherit;
 }
 
+button {
+  cursor: pointer;
+}
+
 .app-shell {
   min-height: 100vh;
   padding: 40px 24px;
@@ -50,4 +54,126 @@ h1 {
   color: #4f5f57;
   font-size: 1.05rem;
   line-height: 1.6;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid #cdd8d0;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #17211c;
+  font-weight: 700;
+  padding: 0 16px;
+  text-decoration: none;
+}
+
+.button-primary {
+  border-color: #24735a;
+  background: #24735a;
+  color: #ffffff;
+}
+
+.button-danger {
+  border-color: #b42318;
+  color: #b42318;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.badge {
+  display: inline-flex;
+  min-height: 28px;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0 10px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.badge-neutral {
+  background: #e8ece8;
+  color: #3d4d45;
+}
+
+.badge-info {
+  background: #d8ecff;
+  color: #17507d;
+}
+
+.badge-success {
+  background: #dff3e6;
+  color: #1f6b3d;
+}
+
+.badge-warning {
+  background: #fff1cc;
+  color: #855d00;
+}
+
+.badge-danger {
+  background: #ffe1de;
+  color: #b42318;
+}
+
+.incident-form {
+  display: grid;
+  gap: 18px;
+}
+
+.incident-form label {
+  display: grid;
+  gap: 8px;
+  color: #314138;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.incident-form input,
+.incident-form select,
+.incident-form textarea {
+  width: 100%;
+  border: 1px solid #cdd8d0;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #17211c;
+  padding: 11px 12px;
+}
+
+.incident-form textarea {
+  resize: vertical;
+}
+
+.form-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.field-error {
+  color: #b42318;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (max-width: 700px) {
+  .app-shell {
+    padding: 28px 16px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
 }
