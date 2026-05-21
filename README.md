@@ -69,6 +69,20 @@ cd backend
 npm test
 ```
 
+### Front-end
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+A interface ficara disponivel em:
+
+```txt
+http://localhost:5173
+```
+
 ## Endpoints principais
 
 | Metodo | Rota | Descricao |
@@ -97,4 +111,3 @@ npm test
 
 - [Nota tecnica](docs/nota-tecnica.md)
 - [Analise de incidente](docs/analise-incidente.md)
-
