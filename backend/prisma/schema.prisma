@@ -1,0 +1,45 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Incident {
+  id          String         @id @default(uuid())
+  title       String
+  description String
+  clientName  String
+  unitCode    String?
+  type        IncidentType
+  priority    Priority
+  status      IncidentStatus @default(OPEN)
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+  resolvedAt  DateTime?
+}
+
+enum IncidentType {
+  LOW_GENERATION
+  INVERTER_OFFLINE
+  COMMUNICATION_FAILURE
+  GRID_VOLTAGE
+  BILLING_ISSUE
+  OTHER
+}
+
+enum Priority {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+enum IncidentStatus {
+  OPEN
+  IN_PROGRESS
+  RESOLVED
+  CANCELED
+}
