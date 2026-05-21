@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import winston from 'winston';
 
-const logDir = path.resolve(__dirname, '../../logs');
+const logDir = path.resolve(process.cwd(), 'logs');
 
 if (!fs.existsSync(logDir)) {
   fs.mkdirSync(logDir, { recursive: true });
