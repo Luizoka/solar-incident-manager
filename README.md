@@ -46,7 +46,7 @@ O projeto foi criado como teste tecnico para demonstrar uma funcionalidade ponta
 cd backend
 npm install
 cp .env.example .env
-npx prisma migrate dev
+npm run prisma:migrate
 npm run dev
 ```
 
@@ -81,6 +81,46 @@ A interface ficara disponivel em:
 
 ```txt
 http://localhost:5173
+```
+
+## Prints
+
+### Front-end
+
+![Tela principal do front-end](docs/images/front.png)
+
+### Detalhes do incidente
+
+![Tela de detalhes do incidente](docs/images/incident_1.png)
+
+### Back-end e testes
+
+![Execucao do back-end](docs/images/backend.png)
+
+## Status do projeto
+
+O projeto ja contempla o fluxo principal pedido no teste tecnico:
+
+- API com CRUD de incidentes
+- Validacao de entrada com Zod
+- Persistencia com Prisma e SQLite
+- Logs com Winston
+- Documentacao Swagger em `/api-docs`
+- Testes automatizados dos principais endpoints
+- Front-end com listagem, filtros, cadastro, edicao, status e exclusao
+- Documentacao tecnica e analise de incidente em `docs`
+
+Antes de enviar para a vaga, rode:
+
+```bash
+cd backend
+npm test
+npm run build
+```
+
+```bash
+cd frontend
+npm run build
 ```
 
 ## Endpoints principais
